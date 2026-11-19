@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use LAMBDA, please cite this software. Please also cite the article given in the README."
+title: "LAMBDA: eigenvalues of the linear shape oscillations of a free viscous drop"
+type: software
+authors:
+  - family-names: Shiratori
+    given-names: Suguru
+    affiliation: Tokyo City University
+version: 1.0.0
+# date-released and doi are filled in at the release (Zenodo)
+license: MIT
+repository-code: "https://github.com/sugurushiratori/Kawasemi-Lambda"
+keywords:
+  - oscillating drop
+  - viscous drop
+  - linear stability
+  - Chebyshev collocation
+  - surface tension
+  - viscosity

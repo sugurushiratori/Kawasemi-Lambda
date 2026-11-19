@@ -1,0 +1,10 @@
+# All finite eigenvalues of degree l = 2 (shape mode and viscous modes).
+drop:
+  Oh: 0.1
+modes: [2]
+resolution:
+  Nr: 32
+solver:
+  method: spectrum
+output:
+  file: spectrum_l2.txt

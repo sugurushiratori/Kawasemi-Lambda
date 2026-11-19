@@ -1,0 +1,15 @@
+# Liquid nickel at 1728 K, R = 1 mm.
+# Physical properties are given in SI units; Oh, Gamma [1/s] and f [Hz] are reported.
+name: Ni_1728K
+drop:
+  physical:
+    density: 7890          # kg/m^3
+    viscosity: 4.7e-3      # Pa s
+    surface_tension: 1.739 # N/m
+    radius: 1.0e-3         # m
+modes: [2, 3, 4]
+resolution:
+  Nr: 48
+  check: true              # also solve with Nr + 16 and report the relative change
+output:
+  file: nickel_out.yaml

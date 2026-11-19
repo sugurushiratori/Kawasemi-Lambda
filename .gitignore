@@ -1,0 +1,12 @@
+build*/
+*_out.yaml
+*_out.csv
+spectrum_l2.txt
+__pycache__/
+.vscode/
+.vs/
+CMakeUserPresets.json
+*.vts
+*_radial.dat
+*_meridional.dat
+*_surface.dat

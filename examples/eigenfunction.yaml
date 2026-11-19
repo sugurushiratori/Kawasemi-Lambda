@@ -1,0 +1,13 @@
+# Spatial form of the l = 2 and l = 3 modes at Oh = 0.0316, for m = 0 and m = 2:
+# ASCII tables (.dat) and ParaView files (.vts).
+name: Oh0.0316
+drop:
+  Oh: 0.0316
+modes: [2, 3]
+output:
+  file: eigenfunction_out.yaml
+  eigenfunction:
+    prefix: Oh0.0316       # default: the case name
+    m: [0, 2]              # 0 <= m <= l; the eigenvalue does not depend on m
+    format: [ascii, vtk]   # either or both
+    points: {r: 33, theta: 49, phi: 65}   # default

@@ -1,0 +1,11 @@
+# Dimensionless input: Ohnesorge number Oh = mu / sqrt(rho sigma R).
+# (Alternatively 'We: <Oh^2>', the parameter name of the command line.)
+name: Oh0.2
+drop:
+  Oh: 0.2
+modes:
+  - 2
+  - 3
+  - {l: 4, guess: [-15.9, 35.2]}   # optional initial guess, viscous units
+output:
+  file: ohnesorge_out.csv
