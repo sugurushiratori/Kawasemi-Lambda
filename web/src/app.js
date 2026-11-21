@@ -427,7 +427,7 @@ function render() {
   const ms = Array.from({ length: state.l + 1 }, (_, m) => opt(m, m, state.m)).join('');
   panel.innerHTML = `
   <div class="lang"><button data-lang="en" class="${state.lang === 'en' ? 'on' : ''}">EN</button> <button data-lang="ja" class="${state.lang === 'ja' ? 'on' : ''}">日本語</button></div>
-  <h1>${T.title}</h1><div class="sub">${T.subtitle}</div>
+  <h1><img class="logo" src="${window.LAMBDA_LOGO || ''}" alt="LAMBDA"></h1><div class="sub">${T.subtitle}</div>
   <h2>${T.drop}</h2>
   <label class="check"><input type="checkbox" id="useOh" ${state.useOh ? 'checked' : ''}>${T.useOh}</label>
   <div id="physBox" style="display:${state.useOh ? 'none' : 'block'}">

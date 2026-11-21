@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/logo/lambda-logo-dark.svg">
+    <img src="docs/logo/lambda-logo-light.svg" alt="LAMBDA" width="420">
+  </picture>
+</p>
+
 # LAMBDA
 
 The executable is `lambdaDrop`.
