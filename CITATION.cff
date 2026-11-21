@@ -7,7 +7,8 @@ authors:
     given-names: Suguru
     affiliation: Tokyo City University
 version: 1.0.0
-# date-released and doi are filled in at the release (Zenodo)
+date-released: 2026-11-22
+# doi is added after the release (Zenodo)
 license: MIT
 repository-code: "https://github.com/sugurushiratori/Kawasemi-Lambda"
 keywords:

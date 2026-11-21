@@ -30,6 +30,8 @@ LAMBDA accompanies
 > Gas to the Lamb and Rayleigh Formulas for the Oscillating-Drop Method",
 > *Int. J. Thermophys.* (submitted).
 
+The article is under review; the reference will be updated when it is published.
+
 ## Web version (no installation)
 
 `docs/index.html` is a self-contained page that runs the same method in the
@@ -38,7 +40,8 @@ order *m*, and the page shows Γ, f and their deviations from Lamb's and
 Rayleigh's values, with an animated 3-D view of the mode (rotate with the
 mouse, amplitude slider, velocity vectors, a meridional section coloured by
 speed, pressure or vorticity). Open the file in a browser, or use the GitHub
-Pages site of this repository. The JavaScript solver (`web/src/solver.js`) is
+Pages site of this repository,
+<https://sugurushiratori.github.io/Kawasemi-Lambda/>. The JavaScript solver (`web/src/solver.js`) is
 tested against the same exact roots as the C++ code (`cd web && npm test`);
 `npm run build` regenerates the page.
 
