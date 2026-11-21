@@ -89,17 +89,19 @@ output:
     CHECK(throws([] { parse_yaml_string("drop: {Oh: 0.1}\nmodes: [2]\nresolution: {Nq: 8}"); }));
     CHECK(throws([] { parse_yaml_string("drop: {Oh: [0.1}"); }));
 
-    {  // command line compatible with dropEigen
-        auto c = parse_legacy_args({"1e-3", "3", "1", "40", "36", "-12.2", "171.4"});
+    {  // command line
+        auto c = parse_command_line({"1e-3", "3", "1", "40", "-12.2", "171.4"});
         CHECK(close(c.Oh, std::sqrt(1e-3)));
         CHECK(c.modes.size() == 1 && c.modes[0].l == 3);
         CHECK(c.Nr == 40);
         CHECK(c.modes[0].guess && c.modes[0].guess->real() == -12.2);
-        auto a = parse_legacy_args({"--all", "1e-1", "2", "24"});
+        auto a = parse_command_line({"--all", "1e-1", "2", "24"});
         CHECK(a.method == Method::Spectrum && a.Nr == 24);
-        CHECK(throws([] { parse_legacy_args({"1e-3"}); }));
-        CHECK(throws([] { parse_legacy_args({"1e-3", "2", "0", "32", "32", "1.0"}); }));
-        CHECK(throws([] { parse_legacy_args({"1e-3x", "2"}); }));
+        CHECK(throws([] { parse_command_line({"1e-3"}); }));
+        CHECK(throws([] { parse_command_line({"1e-3", "2", "0", "32", "1.0"}); }));
+        CHECK(throws([] { parse_command_line({"1e-3", "2", "3"}); }));  // |m| > l
+        CHECK(parse_command_line({"1e-3", "2", "0", "48"}).Nr == 48);
+        CHECK(throws([] { parse_command_line({"1e-3x", "2"}); }));
     }
 
     if (failures) std::fprintf(stderr, "%d check(s) failed\n", failures);

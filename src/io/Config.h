@@ -58,7 +58,7 @@ struct Config {
     OutputFormat output_format = OutputFormat::Yaml;
     EigenfunctionOutput eigenfunction;
 
-    double We() const { return Oh * Oh; }  // legacy parameter name (= Oh^2)
+    double We() const { return Oh * Oh; }  // command-line parameter (= Oh^2)
     void validate() const;                 // throws std::runtime_error
 };
 
@@ -66,9 +66,9 @@ struct Config {
 Config load_yaml(const std::string& path);
 Config parse_yaml_string(const std::string& text);
 
-// Command line (compatible with dropEigen):
-//   lambdaDrop We l [m] [Nr] [Nq] [guessRe guessIm]   m and Nq are accepted and ignored
-//   lambdaDrop --all We l [Nr]                          all eigenvalues of degree l
-Config parse_legacy_args(const std::vector<std::string>& args);
+// Command line:
+//   lambdaDrop We l [m] [Nr] [guessRe guessIm]   one eigenvalue (We = Oh^2; m has no effect)
+//   lambdaDrop --all We l [Nr]                    all eigenvalues of degree l
+Config parse_command_line(const std::vector<std::string>& args);
 
 }  // namespace lambda

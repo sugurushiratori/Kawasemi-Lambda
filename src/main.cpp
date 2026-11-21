@@ -1,7 +1,7 @@
 // LAMBDA: linear eigenvalues of a viscous drop oscillating in vacuum.
 //
 //   lambdaDrop input.yaml
-//   lambdaDrop We l [m] [Nr] [Nq] [guessRe guessIm]     (We = Oh^2; m and Nq ignored)
+//   lambdaDrop We l [m] [Nr] [guessRe guessIm]     (We = Oh^2; m has no effect)
 //   lambdaDrop --all We l [Nr]                           (all eigenvalues of degree l)
 #include <cstdio>
 #include <exception>
@@ -24,7 +24,7 @@ void usage() {
         " - eigenvalues of a free viscous drop\n"
         "usage:\n"
         "  lambdaDrop input.yaml\n"
-        "  lambdaDrop We l [m] [Nr] [Nq] [guessRe guessIm]   (We = Oh^2; m, Nq have no effect)\n"
+        "  lambdaDrop We l [m] [Nr] [guessRe guessIm]   (We = Oh^2; m has no effect)\n"
         "  lambdaDrop --all We l [Nr]                         (all finite eigenvalues of degree l)\n"
         "  lambdaDrop --version\n",
         stderr);
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
         const bool yaml =
             args.size() == 1 && (ends_with(args[0], ".yaml") || ends_with(args[0], ".yml"));
         const lambda::Config cfg =
-            yaml ? lambda::load_yaml(args[0]) : lambda::parse_legacy_args(args);
+            yaml ? lambda::load_yaml(args[0]) : lambda::parse_command_line(args);
 
         if (cfg.method == lambda::Method::Spectrum) {
             std::ofstream f;

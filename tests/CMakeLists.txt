@@ -18,7 +18,7 @@ foreach(_ex ${_examples})
   get_filename_component(_name ${_ex} NAME_WE)
   add_test(NAME example_${_name} COMMAND lambdaDrop ${_ex} WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 endforeach()
-add_test(NAME cli_legacy COMMAND lambdaDrop 1e-3 2 0 32 32)
+add_test(NAME cli COMMAND lambdaDrop 1e-3 2 0 48)
 
 add_executable(test_eigenfunction test_eigenfunction.cpp)
 target_link_libraries(test_eigenfunction PRIVATE lambda_core)

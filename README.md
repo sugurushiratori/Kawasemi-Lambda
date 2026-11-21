@@ -102,12 +102,12 @@ resolution: `points: {r: 33, theta: 49, phi: 65}` (default).
 ### Command line
 
 ```sh
-./build/lambdaDrop We l [m] [Nr] [Nq] [guessRe guessIm]   # one eigenvalue
-./build/lambdaDrop --all We l [Nr]                         # all eigenvalues of degree l
+./build/lambdaDrop We l [m] [Nr] [guessRe guessIm]   # one eigenvalue
+./build/lambdaDrop --all We l [Nr]                    # all eigenvalues of degree l
 ```
 
-`We = Oh² = μ²/(ρσR)`. The arguments `m` and `Nq` are accepted for
-compatibility with earlier versions and have no effect.
+`We = Oh² = μ²/(ρσR)`; λ is printed in viscous units. The azimuthal order
+`m` may be given but does not change the eigenvalue of a sphere.
 
 ### Which root is returned
 

@@ -212,7 +212,7 @@ Config load_yaml(const std::string& path) {
     }
 }
 
-Config parse_legacy_args(const std::vector<std::string>& a) {
+Config parse_command_line(const std::vector<std::string>& a) {
     Config c;
     try {
         if (!a.empty() && a[0] == "--all") {
@@ -222,14 +222,16 @@ Config parse_legacy_args(const std::vector<std::string>& a) {
             c.modes.push_back({to_int(a[2]), std::nullopt});
             if (a.size() == 4) c.Nr = to_int(a[3]);
         } else {
-            if (a.size() < 2 || a.size() > 7 || a.size() == 6) throw std::runtime_error("");
+            if (a.size() < 2 || a.size() > 6 || a.size() == 5) throw std::runtime_error("");
             c.Oh = std::sqrt(to_number(a[0]));
             Mode md;
             md.l = to_int(a[1]);
-            if (a.size() > 2) (void)to_int(a[2]);  // m: no effect for a sphere
+            if (a.size() > 2) {  // m: allowed for completeness; no effect for a sphere
+                const int m = to_int(a[2]);
+                if (std::abs(m) > md.l) throw std::runtime_error("|m| must not exceed l");
+            }
             if (a.size() > 3) c.Nr = to_int(a[3]);
-            if (a.size() > 4) (void)to_int(a[4]);  // Nq: not used
-            if (a.size() == 7) md.guess = std::complex<double>(to_number(a[5]), to_number(a[6]));
+            if (a.size() == 6) md.guess = std::complex<double>(to_number(a[4]), to_number(a[5]));
             c.modes.push_back(md);
         }
     } catch (const std::logic_error&) {  // from stod/stoi
@@ -237,7 +239,7 @@ Config parse_legacy_args(const std::vector<std::string>& a) {
     } catch (const std::runtime_error& e) {
         if (std::string(e.what()).empty())
             throw std::runtime_error(
-                "usage: lambdaDrop We l [m] [Nr] [Nq] [guessRe guessIm] | lambdaDrop --all We l [Nr]");
+                "usage: lambdaDrop We l [m] [Nr] [guessRe guessIm] | lambdaDrop --all We l [Nr]");
         throw;
     }
     c.validate();
