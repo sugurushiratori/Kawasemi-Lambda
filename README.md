@@ -7,6 +7,8 @@
 
 # LAMBDA
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24429696.svg)](https://doi.org/10.5281/zenodo.24429696)
+
 The executable is `lambdaDrop`.
 
 Eigenvalues of the linear shape oscillations of a free, spherical, viscous drop
@@ -179,9 +181,11 @@ python3 tools/chandrasekhar_roots.py --oh 0.0316 --l 2 3 4    # needs mpmath
 
 ## Citation
 
-Software: S. Shiratori, *LAMBDA* (version 1.0.0), Zenodo, DOI to be added at
-the release; see [CITATION.cff](CITATION.cff). Please also cite the article
-given at the top of this file.
+Software: S. Shiratori, *LAMBDA* (version 1.0.0), Zenodo,
+<https://doi.org/10.5281/zenodo.24429697>; see [CITATION.cff](CITATION.cff).
+To cite all versions, use the concept DOI <https://doi.org/10.5281/zenodo.24429696>, which always
+resolves to the latest version. Please also cite the article given at the top
+of this file.
 
 ## Licence
 

@@ -8,7 +8,14 @@ authors:
     affiliation: Tokyo City University
 version: 1.0.0
 date-released: 2026-11-22
-# doi is added after the release (Zenodo)
+doi: 10.5281/zenodo.24429697
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24429697
+    description: "Version 1.0.0"
+  - type: doi
+    value: 10.5281/zenodo.24429696
+    description: "All versions (concept DOI); resolves to the latest version"
 license: MIT
 repository-code: "https://github.com/sugurushiratori/Kawasemi-Lambda"
 keywords:
