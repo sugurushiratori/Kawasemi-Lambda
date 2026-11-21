@@ -51,3 +51,18 @@ jobs:
           python-version: "3.12"
       - run: pip install mpmath
       - run: python tools/make_reference.py && git diff --exit-code tests/reference
+
+  web:
+    # browser version: solver against the exact roots, and the committed page is up to date
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - run: npm test
+      - run: npm run build && git diff --exit-code ../docs/index.html

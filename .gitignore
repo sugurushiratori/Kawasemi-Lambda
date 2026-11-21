@@ -10,3 +10,4 @@ CMakeUserPresets.json
 *_radial.dat
 *_meridional.dat
 *_surface.dat
+web/node_modules/

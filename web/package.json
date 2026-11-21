@@ -1,0 +1,14 @@
+{
+  "name": "lambda-web",
+  "private": true,
+  "description": "Browser version of LAMBDA: interactive eigenmodes of a viscous drop",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node test/test_solver.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "three": "0.187.0"
+  }
+}
